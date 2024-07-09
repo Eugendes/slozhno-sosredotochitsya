@@ -2,4 +2,310 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  position: relative;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 3fr 2fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+  "header__theme-menu header__theme-menu"
+  "header__title header__title"
+  ". header__paragraph";
+}
+
+.decorated-zone {
+  margin: 0;
+  background: url(../images/cover-image-dark.png) center / cover;
+  width: 100%;
+  max-width: 1024px;
+  height: 768px;
+  background-size: cover;
+}
+
+.header__theme-menu {
+  grid-area: header__theme-menu;
+}
+
+.header__theme-menu-list {
+  margin-block-start: 20px;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 10px;
+}
+
+.header__theme-menu-item {
+  width: auto;
+}
+
+.header__theme-menu-item:hover {
+  border: 1px solid var(--dark-outline-and-font-color-accent);
+  cursor: pointer;
+}
+
+.header__theme-menu-button {
+  width: 70px;
+  height: 100%;
+  background-color: transparent;
+  font-family: var(--font);
+  text-transform:lowercase;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
+  color: var(--dark-outline-and-font-color-accent);
+  border: none;
+}
+
+.header__title {
+  grid-area: header__title;
+  padding-block-end: 63px;
+  display: flex;
+  align-items: end;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 157px;
+  line-height: 83%;
+  color: var(--dark-header-font-color);
+  text-shadow: 4px 4px 0 var(--dark-outline-and-font-color-accent);
+}
+
+.header__paragraph {
+  grid-area: header__paragraph;
+  padding-block-start: 51px;
+  padding-inline-end: 20px;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--dark-font-color-accent-and-bg-color);
+}
+
+.paragraph-decor {
+  display: block;
+  background-color: var(--dark-outline-and-font-color-accent);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-top: 1px solid var(--dark-outline-and-font-color-accent);
+  border-right: 1px solid var(--dark-outline-and-font-color-accent);
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border-bottom: 1px solid var(--dark-outline-and-font-color-accent);
+  border-left: 1px solid var(--dark-outline-and-font-color-accent);
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+}
+
+.header__theme-menu::before {
+  content: "REC";
+  position: absolute;
+  top: 20px;
+  right: 48px;
+  color: var(--dark-outline-and-font-color-accent);
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 139%;
+  text-align: center;
+}
+
+.header__theme-menu::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  right: 29px;
+  width: 9px;
+  height: 9px;
+  border-radius: 100%;
+  fill: var(--dark-outline-and-font-color-accent);
+  box-shadow: 0 0 4px 2px var(--dark-outline-and-font-color-accent);
+  background-color: var(--dark-outline-and-font-color-accent);
+}
+
+.card1 {
+  padding-inline: 20px ;
+  padding-block-start: 60px;
+  display: grid;
+  grid-template-columns: 315px 650px;
+  column-gap: 20px;
+  background-color: var(--dark-font-color-accent-and-bg-color);
+  max-width: 1024px;
+}
+
+.card-question {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--dark-outline-and-font-color-accent) ;
+}
+
+.card1__question {
+  grid-column: 1 / 2;
+}
+
+.card-text {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--dark-font-color);
+}
+
+.card1__text {
+  grid-column: 2 / 3;
+}
+
+.card1__text:not(:last-child) {
+  margin-block-end: 20px;
+}
+
+.card-title {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--dark-font-color-accent-and-bg-color);
+  display: block;
+  background-color: var(--dark-outline-and-font-color-accent);
+  margin-block-end: 10px;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--dark-outline-and-font-color-accent);
+}
+
+.card2 {
+  padding-inline: 20px ;
+  padding-block-start: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 315px);
+  grid-template-rows: 47px auto;
+  gap: 20px;
+  background-color: var(--dark-font-color-accent-and-bg-color);
+  max-width: 1024px;
+}
+
+.card2__question {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.card2__text1 {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+.card2__text2 {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.card2__text3 {
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+}
+
+.card3 {
+  padding-inline: 20px ;
+  padding-block-start: 80px;
+  display: grid;
+  grid-template-columns: 315px 650px;
+  column-gap: 20px;
+  background-color: var(--dark-font-color-accent-and-bg-color);
+  max-width: 1024px;
+}
+
+.title-accent {
+  font-weight: 400;
+}
+
+.big-title {
+  margin-block-end: 20px;
+}
+
+
+
+.images-card {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -2;
+  grid-row: 2 / -2;
+}
+
+.cards {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 25px;
+  padding-left: 25px;
+  list-style-type: none;
+}
+
+.cards__item {
+  display: flex;
+  container-type: inline-size;
+  /* Укажите нужный container-type */
+}
+
+.cards__item:nth-child(1) {
+  grid-column: 1 / 5;
+  grid-row: 1 / 6;
+}
+
+.cards__item:nth-child(2) {
+  grid-column: -6 / -1;
+  grid-row: 1 / 6;
+}
+
+.cards__item:nth-child(3) {
+  grid-column: 1 / -1;
+  grid-row: -1 / -5;
+}
+
+.card {
+  display: flex;
+  border: 1px solid #000;
+  cursor: grab;
+}
+
+.card__img {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 55%;
+  min-height: 180px;
+  border-inline-end: 1px solid #000;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.card__text {
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px;
+  background-color: #ffc802;
 }
