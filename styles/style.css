@@ -587,6 +587,7 @@
 
   .card-question {
     min-width: 300px;
+    padding-inline-end: 0;
     /*word-break: break-all; Прописано с целью, блокировки 
     вылезания длинных слов при очень маленьком разрешении*/
   }
