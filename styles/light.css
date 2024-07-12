@@ -10,14 +10,14 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --background-image: url(../images/cover-image-light.png) center / cover;
-  --outline-and-font-color-accent:#ff8dcb;
-  --header-font-color:#FFC2E6;
-  --font-color:#353430;
-  --font-color-accent-and-bg-color: #353430; 
+  --outline-and-font-color-accent: #ff8dcb;
+  --header-font-color: #ffc2e6;
+  --font-color: #353430;
+  --font-color-accent-and-bg-color: #353430;
   --header-font-color-button: #353430;
-  --header-border-button:#353430;
-  --angular-border:#353430;
-  --card-question-color:#353430;
+  --header-border-button: #353430;
+  --angular-border: #353430;
+  --card-question-color: #353430;
   --header-rec: "";
   --circl-radius: 0;
   --shadow: 2px 2px var(--outline-and-font-color-accent);
@@ -25,16 +25,16 @@
 }
 
 :root.theme-light {
-  /* Переменные светлой темы */   
+  /* Переменные светлой темы */
   --background-image: url(../images/cover-image-light.png) center / cover;
-  --outline-and-font-color-accent:#ff8dcb;
-  --header-font-color:#FFC2E6;
-  --font-color:#353430;
-  --font-color-accent-and-bg-color: #353430; 
+  --outline-and-font-color-accent: #ff8dcb;
+  --header-font-color: #ffc2e6;
+  --font-color: #353430;
+  --font-color-accent-and-bg-color: #353430;
   --header-font-color-button: #353430;
-  --header-border-button:#353430;
-  --angular-border:#353430;
-  --card-question-color:#353430;
+  --header-border-button: #353430;
+  --angular-border: #353430;
+  --card-question-color: #353430;
   --header-rec: "";
   --circl-radius: 0;
   --shadow: 2px 2px var(--outline-and-font-color-accent);
@@ -43,21 +43,20 @@
 /* Остальные стили */
 
 @media (prefers-color-scheme: light) {
-:root {
-      /* Дублируем переменные светлой темы */ 
-      --background-image: url(../images/cover-image-light.png) center / cover;
-      --outline-and-font-color-accent:#ff8dcb;
-      --header-font-color:#FFC2E6;
-      --font-color:#353430;
-      --font-color-accent-and-bg-color: #353430;    
-      --header-font-color-button: #353430;
-      --header-border-button:#353430;
-      --angular-border:#353430;
-      --card-question-color:#353430;
-      --header-rec: "";
-      --circl-radius: 0;
-      --shadow: 2px 2px var(--outline-and-font-color-accent);
-      --shadow-rec: none;
-
+  :root {
+    /* Дублируем переменные светлой темы */
+    --background-image: url(../images/cover-image-light.png) center / cover;
+    --outline-and-font-color-accent: #ff8dcb;
+    --header-font-color: #ffc2e6;
+    --font-color: #353430;
+    --font-color-accent-and-bg-color: #353430;
+    --header-font-color-button: #353430;
+    --header-border-button: #353430;
+    --angular-border: #353430;
+    --card-question-color: #353430;
+    --header-rec: "";
+    --circl-radius: 0;
+    --shadow: 2px 2px var(--outline-and-font-color-accent);
+    --shadow-rec: none;
   }
 }
