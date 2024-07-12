@@ -3,9 +3,31 @@
   и их переопределение под различные устройства
 */
 :root {
-  --font:'IBM Plex mono';
-  --dark-outline-and-font-color-accent:#ff0070;
-  --dark-header-font-color:#db00ff;
-  --dark-font-color:#F1B2CE;
-  --dark-font-color-accent-and-bg-color: #000028;
+  /*обычные*/
+  --full-width: 100%;
+  --font-name:'IBM Plex mono';
+  --font-size-text: 18px;
+  --font-size-title: 157px;
+  --font-fat: 700;
+  --font-thin: 400;
+  --font-height-title: 83%;
+  --font-height-text: 130%;
+  --identation-small: 10px;
+  --identation-big: 20px;
+  /*переопределяемые*/
+  --card-why-column: calc( (100% * (325 / (325 + 650))) + 0.7%) calc( (100% * (650 / (325 + 650))) - 0.7%);
+  /*тематические*/
+  --background-image: url(../images/cover-image-dark.png) center / cover;
+  --outline-and-font-color-accent:#ff0070;
+  --header-font-color:#db00ff;
+  --font-color:#F1B2CE;
+  --font-color-accent-and-bg-color: #000028;
+  --header-font-color-button:#ff0070;
+  --header-border-button:#ff0070;
+  --angular-border:#ff0070;
+  --card-question-color:#ff0070;
+  --header-rec: "REC";
+  --circl-radius: 9px;
+  --shadow: 2px 2px var(--outline-and-font-color-accent);
+  --shadow-rec: 0 0 4px 2px var(--outline-and-font-color-accent);
 } 
