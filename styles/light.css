@@ -27,7 +27,7 @@
 :root.theme-light {
   /* Переменные светлой темы */   
   --background-image: url(../images/cover-image-light.png) center / cover;
-  --outline-and-font-color-accent:#ff0070;
+  --outline-and-font-color-accent:#ff8dcb;
   --header-font-color:#FFC2E6;
   --font-color:#353430;
   --font-color-accent-and-bg-color: #353430; 
@@ -46,7 +46,7 @@
 :root {
       /* Дублируем переменные светлой темы */ 
       --background-image: url(../images/cover-image-light.png) center / cover;
-      --outline-and-font-color-accent:#ff0070;
+      --outline-and-font-color-accent:#ff8dcb;
       --header-font-color:#FFC2E6;
       --font-color:#353430;
       --font-color-accent-and-bg-color: #353430;    

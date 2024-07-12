@@ -23,9 +23,9 @@
   grid-template-rows: 1fr 3fr 2fr;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
-  "header__theme-menu header__theme-menu"
-  "header__title header__title"
-  ". header__paragraph";
+    "header__theme-menu header__theme-menu"
+    "header__title header__title"
+    ". header__paragraph";
 }
 
 .decorated-zone {
@@ -33,6 +33,8 @@
   max-width: 1024px;
   height: 768px;
 }
+
+/*........................BUTTON.......................*/
 
 .header__theme-menu {
   grid-area: header__theme-menu;
@@ -51,24 +53,34 @@
   width: auto;
 }
 
-.header__theme-menu-item:hover {
-  border: 1px solid var(--header-border-button);
-  cursor: pointer;
-}
-
 .header__theme-menu-button {
   width: 70px;
   height: var(--full-width);
   background-color: transparent;
   font-family: var(--font-name);
-  text-transform:lowercase;
+  text-transform: lowercase;
   font-weight: var(--font-thin);
   font-size: var(--font-size-text);
   line-height: 1;
   text-align: center;
   color: var(--header-font-color-button);
-  border: none;
+  border: 1px solid transparent;
+  padding: 1px;
+  box-sizing: border-box;
+  outline: none;
 }
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--header-border-button);
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--header-font-color-button);
+}
+
+/*........................TITLE........................*/
 
 .header__title {
   grid-area: header__title;
@@ -82,6 +94,8 @@
   color: var(--header-font-color);
   text-shadow: 4px 4px 0 var(--outline-and-font-color-accent);
 }
+
+/*...................TITLE_PARAGRAF....................*/
 
 .header__paragraph {
   grid-area: header__paragraph;
@@ -108,6 +122,8 @@
 .header-title {
   margin-block-end: 0;
 }
+
+/*....................ПСЕВДОЭЛЕМЕНТЫ...................*/
 
 .header::before {
   content: "";
@@ -198,14 +214,20 @@
 .link {
   text-decoration: none;
   text-shadow: var(--shadow);
+  outline: none;
+  border: 1px solid transparent;
 }
 
 .link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--font-color);
 }
 
+.link:focus {
+  outline: none;
+  border-color: currentColor;
+}
 
-/*......................CARD_WHAT.......................*/
+/*......................CARD_WHAT......................*/
 
 .card__what {
   padding-inline: var(--identation-big);
@@ -243,7 +265,9 @@
   padding-inline: var(--identation-big);
   padding-block-start: calc(var(--identation-big) * 4);
   display: grid;
-  grid-template-columns: calc((100% * (325 / (325 + 650))) + 0.7%) calc((100% * (650 / (325 + 650))) - 0.7%);
+  grid-template-columns: calc((100% * (325 / (325 + 650))) + 0.7%) calc(
+      (100% * (650 / (325 + 650))) - 0.7%
+    );
   max-width: 1024px;
 }
 
@@ -259,7 +283,7 @@
   margin-block-end: var(--identation-big);
 }
 
-/*...........................IMAGE_CARD.....................*/
+/*.......................IMAGE_CARD....................*/
 
 .images-card {
   max-width: 1024px;
@@ -340,7 +364,7 @@
   pointer-events: none;
 }
 
-  /*......................FOOTER.......................*/
+/*.......................FOOTER........................*/
 
 .footer {
   position: relative;
@@ -394,8 +418,11 @@
 
 @media (max-width: 768px) {
   :root {
-    --card-why-column: calc(100% * (256 / (256 + 472))) calc(100% * (472 / (256 + 472)));
+    --card-why-column: calc(100% * (256 / (256 + 472)))
+      calc(100% * (472 / (256 + 472)));
   }
+
+  /*........................HEADER.......................*/
 
   .header {
     height: 100vh;
@@ -408,12 +435,12 @@
     display: flex;
     justify-content: flex-end;
   }
-  
+
   .header__theme-menu-list {
     display: grid;
     grid-template-columns: 1fr;
   }
-  
+
   .header__theme-menu-item {
     width: auto;
   }
@@ -427,17 +454,16 @@
 
   .header__paragraph {
     padding-block-start: calc(var(--identation-big) * 2);
-    padding-inline: 0 var(--identation-big);;
+    padding-inline: 0 var(--identation-big);
   }
 
-  /*......................CARDS.......................*/
+  /*........................CARDS........................*/
 
   .card__why {
     grid-template-columns: var(--card-why-column);
   }
 
   .card-question {
-    word-break: break-all;
     padding-inline-end: var(--identation-big);
   }
 
@@ -447,15 +473,16 @@
   }
 
   .card__how {
-    grid-template-columns: calc(100% * (256 / (256 + 472))) calc(100% * (472 / (256 + 472)));
+    grid-template-columns: calc(100% * (256 / (256 + 472))) calc(
+        100% * (472 / (256 + 472))
+      );
   }
 
-  
   .card__what__question {
-    max-width: 200px ;
+    max-width: 200px;
   }
 
-  /*......................IMAGE_CARD.......................*/
+  /*.....................IMAGE_CARD....................*/
 
   .cards {
     grid-template-columns: repeat(3, calc((100% - 40px) / 3));
@@ -465,38 +492,40 @@
   /*......................FOOTER.......................*/
 
   .footer {
-      margin-block-start: calc(var(--identation-big) * 3);
-      padding-inline: var(--identation-big);
-      width: var(--full-width);
-      height: 100vh;
-    }
+    margin-block-start: calc(var(--identation-big) * 3);
+    padding-inline: var(--identation-big);
+    width: var(--full-width);
+    height: 100vh;
+  }
 
   .footer__title {
     --font-size-title: 120px;
     font-size: var(--font-size-title);
   }
-} 
+}
 
 /*..............................................................................................*/
 
 @media (max-width: 375px) {
+  /*........................HEADER.......................*/
+
   .page {
     width: 100vh;
-    max-width: 375px; ;
+    max-width: 375px;
   }
 
   .header__theme-menu {
-    padding-block:  calc(var(--identation-big) * 2.5);
+    padding-block: calc(var(--identation-big) * 2.5);
     padding-inline-end: var(--identation-small);
     display: flex;
     justify-content: flex-end;
   }
-  
+
   .header__theme-menu-list {
     display: grid;
     grid-template-columns: 1fr;
   }
-  
+
   .header__theme-menu-item {
     width: auto;
   }
@@ -512,9 +541,9 @@
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: 1fr;
     grid-template-areas:
-    "header__theme-menu"
-    "header__title"
-    "header__paragraph";
+      "header__theme-menu"
+      "header__title"
+      "header__paragraph";
   }
 
   .header__paragraph {
@@ -526,12 +555,12 @@
     top: var(--identation-small);
     right: var(--identation-small);
   }
-  
+
   .header::after {
     bottom: var(--identation-small);
     left: var(--identation-small);
   }
-  
+
   .header__theme-menu::before {
     top: var(--identation-small);
     right: calc(var(--identation-big) * 1.9);
@@ -542,7 +571,7 @@
     right: calc(var(--identation-small) * 1.9);
   }
 
-  /*......................CARDS.......................*/
+  /*........................CARDS........................*/
 
   .card__why {
     padding-inline: var(--identation-small);
@@ -557,7 +586,9 @@
   }
 
   .card-question {
-    min-width: 300px ;
+    min-width: 300px;
+    word-break: break-all; /*Прописано с целью, блокировки 
+    вылезания длинных слов при очень маленьком разрешении*/
   }
 
   .card__what {
@@ -592,7 +623,7 @@
     margin-block-start: 0;
   }
 
-  /*......................IMAGE_CARD.......................*/
+  /*.....................IMAGE_CARD....................*/
 
   .images-card {
     padding-block-start: calc(var(--identation-big) * 2.5);
@@ -617,15 +648,15 @@
   .card_ice-cream .card {
     max-height: 355px;
   }
-  
+
   .card_tape .card {
     max-height: 237px;
   }
-  
+
   .card_books .card {
     max-height: 355px;
   }
-  
+
   .card_street .card {
     max-height: 237px;
   }
@@ -638,20 +669,19 @@
     width: var(--full-width);
     height: 100vh;
   }
-  
+
   .footer__title {
     --font-size-title: 116px;
     font-size: var(--font-size-title);
   }
-  
+
   .footer::before {
     top: var(--identation-small);
     right: var(--identation-small);
   }
-  
+
   .footer::after {
     bottom: var(--identation-small);
     left: var(--identation-small);
   }
-  
-} 
+}
