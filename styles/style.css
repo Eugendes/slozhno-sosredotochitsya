@@ -58,7 +58,7 @@
   width: 70px;
   height: var(--full-width);
   background-color: transparent;
-  font-family: var(--font-name);
+  font-family: var(--font-name), sans-serif;
   text-transform: lowercase;
   font-weight: var(--font-thin);
   font-size: var(--font-size-text);
@@ -88,7 +88,7 @@
   padding-block-end: calc(var(--identation-big) * 3.15);
   display: flex;
   align-items: end;
-  font-family: var(--font-name);
+  font-family: var(--font-name), sans-serif;
   font-weight: var(--font-fat);
   font-size: var(--font-size-title);
   line-height: var(--font-height-title);
@@ -102,7 +102,7 @@
   grid-area: header__paragraph;
   padding-block-start: 51px;
   padding-inline-end: var(--identation-big);
-  font-family: var(--font-name);
+  font-family: var(--font-name), sans-serif;
   font-weight: var(--font-fat);
   font-size: var(--font-size-text);
   line-height: var(--font-height-text);
@@ -110,7 +110,7 @@
 }
 
 .title-decor {
-  font-family: var(--font-name);
+  font-family: var(--font-name), sans-serif;
   font-weight: var(--font-fat);
   font-size: var(--font-size-text);
   line-height: var(--font-height-text);
@@ -156,7 +156,7 @@
   top: var(--identation-big);
   right: calc(var(--identation-big) * 2.4);
   color: var(--outline-and-font-color-accent);
-  font-family: var(--font-name);
+  font-family: var(--font-name), sans-serif;
   font-weight: var(--font-thin);
   font-size: var(--font-size-text);
   line-height: 139%;
@@ -189,7 +189,7 @@
 .card-question {
   padding-inline-end: var(--identation-big);
   grid-column: 1 / 2;
-  font-family: var(--font-name);
+  font-family: var(--font-name), sans-serif;
   font-weight: var(--font-fat);
   font-size: var(--font-size-text);
   line-height: var(--font-height-text);
@@ -197,7 +197,7 @@
 }
 
 .card-text {
-  font-family: var(--font-name);
+  font-family: var(--font-name), sans-serif;
   font-weight: var(--font-thin);
   font-size: var(--font-size-text);
   line-height: var(--font-height-text);
@@ -223,7 +223,7 @@
   border-bottom: 1px solid var(--font-color);
 }
 
-.link:focus {
+.link:focus-visible {
   outline: none;
   border-color: currentColor;
 }
@@ -383,7 +383,7 @@
 }
 
 .footer__title {
-  font-family: var(--font-name);
+  font-family: var(--font-name), sans-serif;
   font-weight: var(--font-fat);
   font-size: var(--font-size-title);
   line-height: var(--font-height-title);
