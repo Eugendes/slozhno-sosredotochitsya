@@ -22,7 +22,7 @@
   --circl-radius: 0;
   --shadow: 2px 2px var(--outline-and-font-color-accent);
   --shadow-rec: none;
-  --background-color: none;
+  --background-color: transparent;
 }
 
 :root.theme-light {
@@ -40,7 +40,7 @@
   --circl-radius: 0;
   --shadow: 2px 2px var(--outline-and-font-color-accent);
   --shadow-rec: none;
-  --background-color: none;
+  --background-color: transparent;
 }
 /* Остальные стили */
 
@@ -60,6 +60,6 @@
     --circl-radius: 0;
     --shadow: 2px 2px var(--outline-and-font-color-accent);
     --shadow-rec: none;
-    --background-color: none;
+    --background-color: transparent;
   }
 }
