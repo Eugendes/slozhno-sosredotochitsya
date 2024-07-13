@@ -9,7 +9,7 @@
   height: 768px;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #000028;
+  background-color: var(--background-color);
 }
 
 .container {

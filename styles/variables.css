@@ -31,4 +31,5 @@
   --circl-radius: 9px;
   --shadow: 2px 2px var(--outline-and-font-color-accent);
   --shadow-rec: 0 0 4px 2px var(--outline-and-font-color-accent);
+  --background-color: #000028;
 } 
