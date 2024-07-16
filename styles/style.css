@@ -73,7 +73,7 @@
 
 .header__theme-menu-button_active {
   border: 1px solid var(--header-border-button);
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
@@ -208,13 +208,10 @@
   font-size: var(--font-size-text);
   line-height: var(--font-height-text);
   color: var(--font-color);
-}
-
-.section__why__text {
   grid-column: 2 / 3;
 }
 
-.section-text-multitasking .paragraph-text{
+.section-text-multitasking .paragraph-text {
   margin-block-end: var(--identation-big);
 }
 
@@ -244,7 +241,10 @@
   padding-inline: var(--identation-big);
   padding-block-start: 80px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(calc((100% - 40px) / 3), 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(calc((100% - 40px) / 3), 1fr)
+  );
   gap: var(--identation-big);
   max-width: 1024px;
 }
@@ -254,10 +254,10 @@
 }
 
 .section__what .section-text {
-  font-family: var(--font-name), sans-serif; 
-  font-weight: var(--font-thin); 
-  font-size: var(--font-size-text); 
-  line-height: var(--font-height-text); 
+  font-family: var(--font-name), sans-serif;
+  font-weight: var(--font-thin);
+  font-size: var(--font-size-text);
+  line-height: var(--font-height-text);
   color: var(--font-color);
 }
 
@@ -408,7 +408,6 @@
 /*........................................................MEDIA..............................................................................*/
 
 @media (max-width: 1023px) {
-
   /*........................HEADER.......................*/
 
   .header {
@@ -471,7 +470,6 @@
   .footer {
     max-height: 100%;
   }
-
 }
 
 /*..............................................................................................*/
@@ -550,7 +548,7 @@
     max-width: 100%;
     padding-inline-end: 0;
   }
-  
+
   .section__why__text:not(:last-child) {
     margin-block-start: var(--identation-big);
   }
