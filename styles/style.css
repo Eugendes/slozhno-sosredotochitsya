@@ -3,10 +3,9 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   position: relative;
-  margin: 0;
+  margin: 0 auto;
   background: var(--background-image);
   width: var(--full-width);
-  height: 768px;
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--background-color);
@@ -32,7 +31,7 @@
 .decorated-zone {
   width: var(--full-width);
   max-width: 1024px;
-  height: 768px;
+  max-height: 100%;
 }
 
 /*........................BUTTON.......................*/
@@ -52,6 +51,7 @@
 
 .header__theme-menu-item {
   width: auto;
+  max-height: 26px;
 }
 
 .header__theme-menu-button {
@@ -69,6 +69,11 @@
   padding: 1px;
   box-sizing: border-box;
   outline: none;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--header-border-button);
+  pointer-events: none; 
 }
 
 .header__theme-menu-button:hover {
@@ -126,7 +131,7 @@
 
 /*....................ПСЕВДОЭЛЕМЕНТЫ...................*/
 
-.header::before {
+.decorated-zone::before {
   content: "";
   position: absolute;
   top: var(--identation-big);
@@ -138,7 +143,7 @@
   z-index: 1;
 }
 
-.header::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
   bottom: var(--identation-big);
@@ -178,7 +183,7 @@
 
 /*......................CARD_WHY.......................*/
 
-.card__why {
+.section__why {
   padding-inline: var(--identation-big);
   padding-block-start: calc(var(--identation-big) * 3);
   display: grid;
@@ -186,7 +191,7 @@
   max-width: 1024px;
 }
 
-.card-question {
+.section-question {
   padding-inline-end: var(--identation-big);
   grid-column: 1 / 2;
   font-family: var(--font-name), sans-serif;
@@ -194,9 +199,10 @@
   font-size: var(--font-size-text);
   line-height: var(--font-height-text);
   color: var(--card-question-color);
+  max-width: 305px;
 }
 
-.card-text {
+.section__why__text {
   font-family: var(--font-name), sans-serif;
   font-weight: var(--font-thin);
   font-size: var(--font-size-text);
@@ -204,11 +210,15 @@
   color: var(--font-color);
 }
 
-.card__why__text {
+.section__why__text {
   grid-column: 2 / 3;
 }
 
-.card__why__text:not(:last-child) {
+.section-text-multitasking .paragraph-text{
+  margin-block-end: var(--identation-big);
+}
+
+.section-text-dopamine .paragraph-text:not(:last-of-type) {
   margin-block-end: var(--identation-big);
 }
 
@@ -230,39 +240,34 @@
 
 /*......................CARD_WHAT......................*/
 
-.card__what {
+.section__what {
   padding-inline: var(--identation-big);
   padding-block-start: 80px;
   display: grid;
-  grid-template-columns: repeat(3, calc((100% - 40px) / 3));
-  grid-template-rows: 47px auto;
+  grid-template-columns: repeat(auto-fill, minmax(calc((100% - 40px) / 3), 1fr));
   gap: var(--identation-big);
   max-width: 1024px;
 }
 
-.card__what__question {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
+.section__what__question {
+  grid-column: 1 / -1;
 }
 
-.card__what__text-multitasking {
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
+.section__what .section-text {
+  font-family: var(--font-name), sans-serif; 
+  font-weight: var(--font-thin); 
+  font-size: var(--font-size-text); 
+  line-height: var(--font-height-text); 
+  color: var(--font-color);
 }
 
-.card__what__text-food {
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
-}
-
-.card__what__text-gadgets {
-  grid-row: 2 / 3;
-  grid-column: 3 / 4;
+.section__what .paragraph-text:not(:last-of-type) {
+  margin-block-end: var(--identation-big);
 }
 
 /*......................CARD_HOW.......................*/
 
-.card__how {
+.section__how {
   padding-inline: var(--identation-big);
   padding-block-start: calc(var(--identation-big) * 4);
   display: grid;
@@ -272,7 +277,7 @@
   max-width: 1024px;
 }
 
-.card__how__question {
+.section__how__question {
   margin-block-end: var(--identation-big);
 }
 
@@ -284,9 +289,21 @@
   margin-block-end: var(--identation-big);
 }
 
+.section__how .paragraph-text {
+  margin-block-end: var(--identation-big);
+}
+
+.section__how .section-question {
+  max-width: 325px;
+}
+
+.accent-margin .paragraph-text:last-child {
+  margin-block-end: 0;
+}
+
 /*.......................IMAGE_CARD....................*/
 
-.images-card {
+.section__images {
   max-width: 1024px;
   padding-block-start: calc(var(--identation-big) * 4);
   padding-inline: var(--identation-big);
@@ -294,7 +311,7 @@
   flex-direction: column;
 }
 
-.cards {
+.section-list {
   display: grid;
   flex-grow: 1;
   grid-template-columns: repeat(3, calc((100% - 40px) / 3));
@@ -303,7 +320,7 @@
   list-style-type: none;
 }
 
-.cards__item {
+.section__item {
   display: grid;
   overflow: hidden;
 }
@@ -369,14 +386,11 @@
 
 .footer {
   position: relative;
-
   margin-block-start: calc(var(--identation-big) * 3);
   padding-inline: var(--identation-big);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: var(--full-width);
   max-width: 1024px;
   height: 100vh;
@@ -391,42 +405,14 @@
   text-shadow: 2px 2px 0 var(--outline-and-font-color-accent);
 }
 
-.footer::before {
-  content: "";
-  position: absolute;
-  top: var(--identation-big);
-  right: var(--identation-big);
-  border-top: 1px solid var(--angular-border);
-  border-right: 1px solid var(--angular-border);
-  width: 25px;
-  height: 25px;
-  z-index: 1;
-}
-
-.footer::after {
-  content: "";
-  position: absolute;
-  bottom: var(--identation-big);
-  left: var(--identation-big);
-  border-bottom: 1px solid var(--angular-border);
-  border-left: 1px solid var(--angular-border);
-  width: 25px;
-  height: 25px;
-  z-index: 1;
-}
-
 /*........................................................MEDIA..............................................................................*/
 
-@media (max-width: 768px) {
-  /*
-  :root {
-    --card-why-column: calc(100% * (256 / (256 + 472))) calc(100% * (472 / (256 + 472)));
-  }
-  не работает переопределение*/
+@media (max-width: 1023px) {
+
   /*........................HEADER.......................*/
 
   .header {
-    height: 100vh;
+    max-height: 100%;
     grid-template-rows: repeat(3, 1fr);
   }
 
@@ -438,19 +424,12 @@
   }
 
   .header__theme-menu-list {
-    display: grid;
     grid-template-columns: 1fr;
-  }
-
-  .header__theme-menu-item {
-    width: auto;
   }
 
   .header__title {
     align-items: center;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     padding-block-end: 0;
-    padding-inline-start: 0;
   }
 
   .header__paragraph {
@@ -460,34 +439,29 @@
 
   /*........................CARDS........................*/
 
-  .card__why {
+  .section__why {
     --card-why-column: calc(100% * (256 / (256 + 472)))
       calc(100% * (472 / (256 + 472)));
-    grid-template-columns: var(--card-why-column);
   }
 
-  .card-question {
-    padding-inline-end: var(--identation-big);
-  }
-
-  .card__what {
+  .section__what {
     display: flex;
     flex-direction: column;
   }
 
-  .card__how {
+  .section__how {
     grid-template-columns: calc(100% * (256 / (256 + 472))) calc(
         100% * (472 / (256 + 472))
       );
   }
 
-  .card__what__question {
+  .section__what__question {
     max-width: 200px;
   }
 
   /*.....................IMAGE_CARD....................*/
 
-  .cards {
+  .section-list {
     grid-template-columns: repeat(3, calc((100% - 40px) / 3));
     grid-template-rows: 192px 20px 230px 20px 318px;
   }
@@ -495,49 +469,18 @@
   /*......................FOOTER.......................*/
 
   .footer {
-    margin-block-start: calc(var(--identation-big) * 3);
-    padding-inline: var(--identation-big);
-    width: var(--full-width);
-    height: 100vh;
+    max-height: 100%;
   }
 
-  .footer__title {
-    --font-size-title: 120px;
-    font-size: var(--font-size-title);
-  }
 }
 
 /*..............................................................................................*/
 
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   /*........................HEADER.......................*/
 
   .page {
-    width: 100vh;
-    max-width: 375px;
-  }
-
-  .header__theme-menu {
-    padding-block: calc(var(--identation-big) * 2.5);
-    padding-inline-end: var(--identation-small);
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .header__theme-menu-list {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .header__theme-menu-item {
-    width: auto;
-  }
-
-  .header__title {
-    align-items: center;
-    padding-block-end: 0;
-    padding-inline-start: var(--identation-small);
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    max-width: 767px;
   }
 
   .header {
@@ -549,17 +492,35 @@
       "header__paragraph";
   }
 
+  .header__theme-menu {
+    padding-block: calc(var(--identation-big) * 2.5);
+    padding-inline-end: var(--identation-small);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header__theme-menu-list {
+    grid-template-columns: 1fr;
+  }
+
+  .header__title {
+    --font-size-title: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    align-items: center;
+    padding-block-end: 0;
+    padding-inline-start: var(--identation-small);
+  }
+
   .header__paragraph {
     padding-block-start: calc(var(--identation-big) * 1.95);
     padding-inline: var(--identation-small);
   }
 
-  .header::before {
+  .decorated-zone::before {
     top: var(--identation-small);
     right: var(--identation-small);
   }
 
-  .header::after {
+  .decorated-zone::after {
     bottom: var(--identation-small);
     left: var(--identation-small);
   }
@@ -576,7 +537,7 @@
 
   /*........................CARDS........................*/
 
-  .card__why {
+  .section__why {
     padding-inline: var(--identation-small);
     padding-block-start: calc(var(--identation-big) * 2);
     display: flex;
@@ -584,16 +545,17 @@
     column-gap: 0;
   }
 
-  .card__why__text:not(:last-child) {
+  .section-question {
+    min-width: 300px;
+    max-width: 100%;
+    padding-inline-end: 0;
+  }
+  
+  .section__why__text:not(:last-child) {
     margin-block-start: var(--identation-big);
   }
 
-  .card-question {
-    min-width: 300px;
-    padding-inline-end: 0;
-  }
-
-  .card__what {
+  .section__what {
     padding-inline: var(--identation-small);
     padding-block-start: calc(var(--identation-big) * 2.5);
     display: flex;
@@ -601,15 +563,15 @@
     gap: 0;
   }
 
-  .card__what__question {
+  .section__what__question {
     margin-block-end: var(--identation-big);
   }
 
-  .card__what .card-text:not(:last-child) {
+  .section__what .section-text:not(:last-child) {
     margin-block-end: var(--identation-big);
   }
 
-  .card__how {
+  .section__how {
     padding-inline: var(--identation-small);
     padding-block-start: calc(var(--identation-big) * 2.5);
     display: flex;
@@ -617,74 +579,60 @@
     gap: 0;
   }
 
-  .card__how .card__why__text:not(:last-child) {
+  .section__how .section__why__text:not(:last-child) {
     margin-block-end: var(--identation-big);
   }
 
-  .card__how .card__why__text {
+  .section__how .section__why__text {
     margin-block-start: 0;
   }
 
   /*.....................IMAGE_CARD....................*/
 
-  .images-card {
+  .section__images {
     padding-block-start: calc(var(--identation-big) * 2.5);
     padding-inline: var(--identation-small);
   }
 
-  .cards {
+  .section-list {
     display: flex;
     flex-direction: column;
     row-gap: var(--identation-small);
     padding-inline: 0;
   }
 
-  .images-card .accent-margin-title {
+  .section__images .accent-margin-title {
     margin-block-end: var(--identation-small);
   }
 
-  .card_sunset .card {
-    max-height: 142px;
+  .card_sunset {
+    max-height: 100%;
   }
 
-  .card_ice-cream .card {
-    max-height: 355px;
+  .card_ice-cream {
+    max-height: 100%;
   }
 
-  .card_tape .card {
-    max-height: 237px;
+  .card_tape {
+    max-height: 100%;
   }
 
-  .card_books .card {
-    max-height: 355px;
+  .card_books {
+    max-height: 100%;
   }
 
-  .card_street .card {
-    max-height: 237px;
+  .card_street {
+    max-height: 100%;
   }
 
   /*......................FOOTER.......................*/
 
   .footer {
     margin-block-start: calc(var(--identation-big) * 2);
-    padding-inline: var(--identation-big);
-    width: var(--full-width);
-    height: 100vh;
   }
 
   .footer__title {
+    --font-size-title: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     margin-block-start: 3px;
-    --font-size-title: 116px;
-    font-size: var(--font-size-title);
-  }
-
-  .footer::before {
-    top: var(--identation-small);
-    right: var(--identation-small);
-  }
-
-  .footer::after {
-    bottom: var(--identation-small);
-    left: var(--identation-small);
   }
 }

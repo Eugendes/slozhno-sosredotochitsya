@@ -8,7 +8,7 @@
   --full-width: 100%;
   --font-name: "IBM Plex mono";
   --font-size-text: 18px;
-  --font-size-title: 157px;
+  --font-size-title: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --font-fat: 700;
   --font-thin: 400;
   --font-height-title: 83%;
@@ -25,7 +25,7 @@
   --font-color: #f1b2ce;
   --font-color-accent-and-bg-color: #000028;
   --header-font-color-button: #ff0070;
-  --header-border-button: #ff0070;
+  --header-border-button:rgba(255, 0, 112, 0.5);
   --angular-border: #ff0070;
   --card-question-color: #ff0070;
   --header-rec: "REC";
