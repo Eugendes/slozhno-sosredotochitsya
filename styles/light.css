@@ -15,7 +15,8 @@
   --font-color: #353430;
   --font-color-accent-and-bg-color: #353430;
   --header-font-color-button: #353430;
-  --header-border-button: rgba(53, 52, 48, 0.5);
+  --header-border-button-hover: rgba(53, 52, 48, 0.4);
+  --header-border-button: rgba(53, 52, 48);
   --angular-border: #353430;
   --card-question-color: #353430;
   --header-rec: "";
@@ -34,7 +35,8 @@
     --font-color: #353430;
     --font-color-accent-and-bg-color: #353430;
     --header-font-color-button: #353430;
-    --header-border-button: rgba(53, 52, 48, 0.5);
+    --header-border-button-hover: rgba(53, 52, 48, 0.4);
+    --header-border-button: rgba(53, 52, 48);
     --angular-border: #353430;
     --card-question-color: #353430;
     --header-rec: "";

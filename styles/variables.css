@@ -16,8 +16,9 @@
   --identation-small: 10px;
   --identation-big: 20px;
   /*переопределяемые*/
-  --card-why-column: calc((100% * (325 / (325 + 650))) + 0.7%)
+  --card-column: calc((100% * (325 / (325 + 650))) + 0.7%)
     calc((100% * (650 / (325 + 650))) - 0.7%);
+  --section-block-padding: calc(var(--identation-big) * 3);
   /*тематические*/
   --background-image: url(../images/cover-image-dark.png) center / cover;
   --outline-and-font-color-accent: #ff0070;
@@ -25,7 +26,8 @@
   --font-color: #f1b2ce;
   --font-color-accent-and-bg-color: #000028;
   --header-font-color-button: #ff0070;
-  --header-border-button: rgba(255, 0, 112, 0.5);
+  --header-border-button-hover: rgba(255, 0, 112, 0.4);
+  --header-border-button: rgba(255, 0, 112);
   --angular-border: #ff0070;
   --card-question-color: #ff0070;
   --header-rec: "REC";
