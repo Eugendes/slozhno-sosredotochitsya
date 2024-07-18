@@ -28,16 +28,6 @@
     "header__title header__title"
     ". header__paragraph";
 }
-
-.rec__element {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  max-width: 100%;
-  max-height: 100%;
-  z-index: -1;
-}
-
 .decorated-zone {
   width: var(--full-width);
   max-width: 1024px;
@@ -201,13 +191,13 @@
   max-width: 1024px;
 }
 
-.content-section:nth-child(2) {
+.section__what {
   --section-block-padding: calc(var(--identation-big) * 4);
   --card-column: repeat(auto-fill, minmax(calc((100% - 40px) / 3), 1fr));
   gap: var(--identation-big);
 }
 
-.content-section:nth-child(3) {
+.section__how {
   --section-block-padding: calc(var(--identation-big) * 4);
   --card-column: calc((100% * (325 / (325 + 650))) + 0.7%)
     calc((100% * (650 / (325 + 650))) - 0.7%);
@@ -232,7 +222,7 @@
   color: var(--font-color);
 }
 
-.content-section:nth-child(1) .section-text {
+.section__why .section-text {
   font-family: var(--font-name), sans-serif;
   font-weight: var(--font-thin);
   font-size: var(--font-size-text);
@@ -241,8 +231,8 @@
   grid-column: 2 / 3;
 }
 
-.content-section:nth-child(1) .section-text:not(:last-of-type) .paragraph-text,
-.content-section:nth-child(1) .paragraph-text:not(:last-of-type) {
+.section__why .section-text:not(:last-of-type) .paragraph-text,
+.section__why .paragraph-text:not(:last-of-type) {
   margin-block-end: var(--identation-big);
 }
 
@@ -268,7 +258,7 @@
   grid-column: 1 / -1;
 }
 
-.content-section:nth-child(2) .paragraph-text:not(:last-of-type) {
+.section__what .paragraph-text:not(:last-of-type) {
   margin-block-end: var(--identation-big);
 }
 
@@ -282,17 +272,15 @@
   margin-block-end: var(--identation-big);
 }
 
-.content-section:nth-child(3) .paragraph-text {
+.section__how .paragraph-text {
   margin-block-end: var(--identation-big);
 }
 
-.content-section:nth-child(3) .section-question {
+.section__how .section-question {
   max-width: 325px;
 }
 
-.content-section:nth-child(3)
-  .section-text:last-child
-  .paragraph-text:last-child {
+.section__how .section-text:last-child .paragraph-text:last-child {
   margin-block-end: 0;
 }
 
@@ -439,12 +427,12 @@
       calc(100% * (472 / (256 + 472)));
   }
 
-  .content-section:nth-child(2) {
+  .section__what {
     display: flex;
     flex-direction: column;
   }
 
-  .content-section:nth-child(3) {
+  .section__how {
     --card-column: calc(100% * (256 / (256 + 472)))
       calc(100% * (472 / (256 + 472)));
   }
@@ -539,7 +527,7 @@
     gap: 0;
   }
 
-  .content-section:nth-child(2) {
+  .section__what {
     gap: 0;
   }
 
@@ -548,27 +536,27 @@
   }
 
   .section-question,
-  .content-section:nth-child(3) .section-question {
+  .section__how .section-question {
     width: 100%;
     max-width: 350px;
     padding-inline-end: 0;
   }
 
-  .content-section:nth-child(3) .section-question,
+  .section__how .section-question,
   .section__what__question {
     margin-block-end: var(--identation-big);
   }
 
-  .content-section:nth-child(1) .section-text:not(:last-child) {
+  .section__why .section-text:not(:last-child) {
     margin-block-start: var(--identation-big);
   }
 
-  .content-section:nth-child(2) .section-text:not(:last-child),
-  .content-section:nth-child(3) .section-text:not(:last-child) {
+  .section__what .section-text:not(:last-child),
+  .section__how .section-text:not(:last-child) {
     margin-block-end: var(--identation-big);
   }
 
-  .content-section:nth-child(3) .section-text {
+  .section__how .section-text {
     margin-block-start: 0;
   }
 
